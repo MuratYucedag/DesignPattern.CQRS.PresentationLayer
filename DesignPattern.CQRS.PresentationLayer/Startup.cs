@@ -1,4 +1,6 @@
 using DesignPattern.CQRS.PresentationLayer.CQRS.Handlers;
+using DesignPattern.CQRS.PresentationLayer.CQRS.Handlers.PersonHandlers;
+using DesignPattern.CQRS.PresentationLayer.CQRS.Handlers.UniversityHandlers;
 using DesignPattern.CQRS.PresentationLayer.DAL.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +31,17 @@ namespace DesignPattern.CQRS.PresentationLayer
             services.AddDbContext<Context>();
             services.AddScoped<GetProductProducerQueryHandler>();
             services.AddScoped<GetProductPlannerQueryHandler>();
+            services.AddScoped<GetPersonHumanResourceQueryHandler>();
+            services.AddScoped<GetPersonByIDQueryHandler>();
+            services.AddScoped<CreatePersonHandler>();
+
+            services.AddScoped<GetAllUniversityQueryHandler>();
+            services.AddScoped<GetUniversityByIDQueryHandler>();
+            services.AddScoped<CreateUniversityHandler>();
+            services.AddScoped<RemoveUniversityHandler>();
+            services.AddScoped<GetUniversityUpdateByIDQueryHandler>();
+            services.AddScoped<UpdateUniversityHandler>();
+
             services.AddControllersWithViews();
         }
 

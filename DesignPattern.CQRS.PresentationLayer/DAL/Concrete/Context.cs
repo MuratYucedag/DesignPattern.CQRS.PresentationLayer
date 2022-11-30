@@ -14,5 +14,7 @@ namespace DesignPattern.CQRS.PresentationLayer.DAL.Concrete
             optionsBuilder.UseSqlServer("Server=DESKTOP-07T8MF2\\MSSQLSERVER01;initial catalog=CQRSDb;integrated security=true");
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<University> Universities { get; set; }
     }
 }

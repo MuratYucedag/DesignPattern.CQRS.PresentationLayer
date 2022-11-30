@@ -4,14 +4,16 @@ using DesignPattern.CQRS.PresentationLayer.DAL.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DesignPattern.CQRS.PresentationLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221129163819_mig_person_table")]
+    partial class mig_person_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,33 +121,6 @@ namespace DesignPattern.CQRS.PresentationLayer.Migrations
                     b.HasKey("ProductID");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("DesignPattern.CQRS.PresentationLayer.DAL.Entity.University", b =>
-                {
-                    b.Property<int>("UniversityID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Population")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Region")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UniversityID");
-
-                    b.ToTable("Universities");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,20 @@
+﻿@model GetPersonByIDQueryResult
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+
+<div class="container" style="margin-top:50px">
+    <label>Kişi ID</label>
+    <input type="text" asp-for="PersonID" class="form-control" />
+    <br />
+    <label>Kişi Adı</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <label>Kişi Soyadı</label>
+    <input type="text" asp-for="Surname" class="form-control" />
+    <br />
+</div>
